@@ -12078,11 +12078,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Testing\\Testing2\\Testing2.csproj",
+      "projectUniqueName": "C:\\Testing\\Testing2\\Code\\Testing2.csproj",
       "projectName": "Testing2",
-      "projectPath": "C:\\Testing\\Testing2\\Testing2.csproj",
+      "projectPath": "C:\\Testing\\Testing2\\Code\\Testing2.csproj",
       "packagesPath": "C:\\Users\\kopabjan\\.nuget\\packages\\",
-      "outputPath": "C:\\Testing\\Testing2\\obj\\",
+      "outputPath": "C:\\Testing\\Testing2\\Code\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

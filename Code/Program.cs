@@ -17,8 +17,18 @@ namespace Testing2
             CreateWebHostBuilder(args).Build().Run();
         }
 
+
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
                 .UseStartup<Startup>();
+    }
+
+    public static class ToTest
+    {
+
+        public static int testMethod()
+        {
+            return 10;
+        }
     }
 }
