@@ -2,4 +2,3 @@
 Empty Dotnet Core repo for testing
 
 Test
-Test
