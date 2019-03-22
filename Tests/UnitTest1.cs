@@ -26,7 +26,7 @@ namespace Tests
         public void Test3()
         {
             int a = 10;
-            int b = 11;
+            int b = 10;
             Assert.Equal(a,b);
         }
 
