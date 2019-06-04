@@ -5,7 +5,9 @@
 
 trigger:
   branches:
-    include: [ testingA ]
+    include: [ master ]
+  paths:
+    include: [ README.md ] 
 
 pr: none
 
