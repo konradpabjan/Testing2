@@ -7,7 +7,7 @@ trigger:
   branches:
     include: [ master, testingA ]
 
-pool: Default
+pool: Hosted VS2017
 
 steps:
 - script: echo Hello, world!
