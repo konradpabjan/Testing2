@@ -3,13 +3,13 @@
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
 
-trigger:
+trigger: none
+
+pr: 
   branches:
     include: [ master ]
   paths:
     include: [ README.md ] 
-
-pr: none
 
 pool: Hosted VS2017
 
