@@ -14,4 +14,4 @@ TEST
 
 TEST
 
-This should trigger a build
+This should now trigger a build
