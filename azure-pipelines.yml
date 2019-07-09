@@ -11,7 +11,7 @@ pr:
   paths:
     include: [ README.md ] 
 
-pool: Hosted VS2017
+pool: Default
 
 steps:
 - script: echo Hello, world!
