@@ -2,16 +2,3 @@
 Empty Dotnet Core repo for testing
 TEST
 
-TEST
-
-TEST
-
-TEST
-
-TEST
-
-TEST
-
-TEST
-
-This should now trigger a build
