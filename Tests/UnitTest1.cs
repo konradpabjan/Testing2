@@ -47,7 +47,7 @@ namespace Tests
             Assert.Equal(a,b);
         }
         
-        [Ignore]
+        [Fact (Skip = "Testing skipping")]
         public void TestIgnore()
         {
             int a = 10;
