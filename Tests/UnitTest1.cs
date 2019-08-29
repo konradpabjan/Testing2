@@ -48,7 +48,7 @@ namespace Tests
         }
         
         [Ignore]
-        public void TestFail()
+        public void TestIgnore()
         {
             int a = 10;
             int b = 11;
