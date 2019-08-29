@@ -38,5 +38,21 @@ namespace Tests
             int b = ToTest.testMethod();
             Assert.Equal(a,b);
         }
+        
+        [Fact]
+        public void TestFail()
+        {
+            int a = 10;
+            int b = 11;
+            Assert.Equal(a,b);
+        }
+        
+        [Ignore]
+        public void TestFail()
+        {
+            int a = 10;
+            int b = 11;
+            Assert.Equal(a,b);
+        }
     }
 }
