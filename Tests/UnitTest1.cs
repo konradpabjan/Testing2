@@ -43,7 +43,7 @@ namespace Tests
         public void TestFail()
         {
             int a = 10;
-            int b = 11;
+            int b = 10;
             Assert.Equal(a,b);
         }
         
