@@ -2,7 +2,7 @@ name: Env Variables
 on: [push]
 jobs:
   build:
-    runs-on: [windows-latest]
+    runs-on: [windows-latest, ubuntu-latest]
     steps:
       - name: 'Print env variables'
         run: gci env:* | sort-object name
