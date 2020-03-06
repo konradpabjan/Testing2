@@ -5,11 +5,14 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        python-version: [ pypy2, pypy3 ]
+        python-version: [ 3.7, 3.8 ]
         os: [ubuntu-latest, windows-latest, macos-latest]
     steps:
-    - uses: konradpabjan/setup-python@master
+    - uses: actions/setup-python@master
       with:
         python-version: ${{ matrix.python-version }}
         architecture: 'x64'
-    - run: python --version
+    - shell: python
+      run: |
+        import sqlite3
+        from sqlite3 import Error
