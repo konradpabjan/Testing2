@@ -2,10 +2,10 @@ name: Env Variables
 on: [push]
 jobs:
   build:
-    runs-on: [ubuntu-latest]
+    runs-on: [ubuntu-latest, windows-latest, macos-latest]
     strategy:
       matrix:
-        python-version: [ '3.x', '2.7' ]
+        python-version: [ 'pypy2', 'pypy3' ]
     steps:
     - uses: konradpabjan/setup-python@master
       with:
