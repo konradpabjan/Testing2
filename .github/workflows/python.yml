@@ -5,9 +5,9 @@ jobs:
     runs-on: [ubuntu-latest]
     strategy:
       matrix:
-        python-version: [ '3.9', '2.7' ]
+        python-version: [ '3.x', '2.7' ]
     steps:
-    - uses: robindaumann/setup-python@master
+    - uses: konradpabjan/setup-python@master
       with:
         python-version: ${{ matrix.python-version }}
         architecture: 'x64'
