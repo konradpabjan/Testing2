@@ -4,5 +4,10 @@ jobs:
   build:
     runs-on: [ubuntu-latest]
     steps:
-      - name: 'Print env variables'
-        run: gci env:* | sort-object name
+    - uses: actions/setup-python@v1
+      with:
+        python-version: '3.5' # Version range or exact version of a Python version to use, using SemVer's version range syntax
+        architecture: 'x64' # optional x64 or x86. Defaults to x64 if not specified
+    - run: python --version
+    - run: python --version
+      shell: python
