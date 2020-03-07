@@ -14,5 +14,5 @@ jobs:
         architecture: 'x64'
     - shell: python
       run: |
-        import sqlite3
-        from sqlite3 import Error
+        import sys
+        print(sys.version)
