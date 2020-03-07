@@ -13,5 +13,5 @@ jobs:
         python-version: ${{ matrix.python-version }}
         architecture: 'x64'
     - run: |
-        import sys
-        print(sys.version)
+        python import sys
+        python print(sys.version)
