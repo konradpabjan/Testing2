@@ -5,8 +5,8 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        python-version: [ 3.7 ]
-        os: [windows-latest]
+        python-version: [ 3.6, 3.7, 3.8 ]
+        os: [self-hosted]
     steps:
     - uses: actions/setup-python@master
       with:
