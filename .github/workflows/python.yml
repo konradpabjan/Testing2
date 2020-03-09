@@ -13,6 +13,3 @@ jobs:
         python-version: ${{ matrix.python-version }}
         architecture: 'x64'
     - run: python -c "import sys; print(sys.version)"
-    - run: |
-        cd C:\hostedtoolcache\windows\Python\3.7.6\x64
-        ls
