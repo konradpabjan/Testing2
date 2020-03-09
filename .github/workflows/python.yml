@@ -8,7 +8,7 @@ jobs:
         python-version: [ 2.7, 3.5, 3.6, 3.7, 3.8, pypy3, pypy2 ]
         os: [ubuntu-latest, windows-latest]
     steps:
-    - uses: actions/setup-python@releases/v1
+    - uses: actions/setup-python@9ac730844c47e52575257e93faf193c4530bc095
       with:
         python-version: ${{ matrix.python-version }}
         architecture: 'x64'
