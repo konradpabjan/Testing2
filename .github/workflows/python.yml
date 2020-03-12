@@ -3,24 +3,23 @@ on: [push]
 jobs:
   build:
     env:
-      test: does this work?
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        python-version: [ 2.7 ]
-        os: [ubuntu-latest]
+      input: environment variable
+    runs-on: [ubuntu-latest]
     steps:
-    - uses: actions/setup-python@v1
-      with:
-        python-version: ${{ matrix.python-version }}
-        architecture: 'x64'
-    - run: python -c "import sys; print(sys.maxunicode)"
+    # use env variable as input
     - uses: actions/hello-world-javascript-action@master
       with:
-          who-to-greet: ${{ github.actor }}
+          who-to-greet: ${{ env.input }}
+    # use input from default environement variable
+    # https://help.github.com/en/actions/configuring-and-managing-workflows/using-environment-variables#default-environment-variables
     - uses: actions/hello-world-javascript-action@master
       with:
           who-to-greet: all_reports_${{ GITHUB.REPOSITORY }} 
-    - run: |
-        echo $GITHUB_REPOSITORY
-        echo $GITHUB
+
+    - uses: actions/hello-world-javascript-action@master
+      with:
+          who-to-greet: all_reports_${{ GITHUB.REF }}
+    
+    - uses: actions/hello-world-javascript-action@master
+      with:
+          who-to-greet: all_reports_${{ GITHUB.EVENT.NAME }} 
