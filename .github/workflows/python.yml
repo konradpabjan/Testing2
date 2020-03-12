@@ -20,4 +20,4 @@ jobs:
           who-to-greet: ${{ env.test }}
     - uses: actions/hello-world-javascript-action@master
       with:
-          who-to-greet: all_reports_${{ env.ref }}
+          who-to-greet: all_reports_${{ env.GITHUB_REF }}
