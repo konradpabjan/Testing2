@@ -20,11 +20,6 @@ jobs:
       uses: actions/hello-world-javascript-action@master
       with:
           who-to-greet: Test input - ${{ GITHUB.REPOSITORY }} 
-          
-    # this doesn't work
-    - uses: actions/hello-world-javascript-action@master
-      with:
-          who-to-greet: Test input - ${{ GITHUB_REPOSITORY }} 
 
     - uses: actions/hello-world-javascript-action@master
       with:
