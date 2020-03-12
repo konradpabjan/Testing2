@@ -22,4 +22,4 @@ jobs:
     
     - uses: actions/hello-world-javascript-action@master
       with:
-          who-to-greet: all_reports_${{ GITHUB.EVENT.NAME }} 
+          who-to-greet: all_reports_${{ GITHUB.WORKSPACE }} 
