@@ -4,6 +4,7 @@ jobs:
   build:
     env:
       test: does this work?
+      test2: ${{ GITHUB_REF }}
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
@@ -20,4 +21,4 @@ jobs:
           who-to-greet: ${{ env.test }}
     - uses: actions/hello-world-javascript-action@master
       with:
-          who-to-greet: all_reports_${{ env.GITHUB_REF }}
+          who-to-greet: all_reports_${{ env.test2}}
