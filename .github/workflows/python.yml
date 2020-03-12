@@ -17,7 +17,7 @@ jobs:
     - run: python -c "import sys; print(sys.maxunicode)"
     - uses: actions/hello-world-javascript-action@master
       with:
-          who-to-greet: ${{ github }}
+          who-to-greet: ${{ github.actor }}
     - uses: actions/hello-world-javascript-action@master
       with:
           who-to-greet: all_reports_${{ GITHUB.REPOSITORY }} 
