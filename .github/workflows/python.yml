@@ -17,7 +17,7 @@ jobs:
     - run: python -c "import sys; print(sys.maxunicode)"
     - uses: actions/hello-world-javascript-action@master
       with:
-          who-to-greet: ${{ env.test }}
+          who-to-greet: ${{ github.ref }}
     - uses: actions/hello-world-javascript-action@master
       with:
-          who-to-greet: all_reports_${{ env.GITHUB_RUN_NUMBER }} 
+          who-to-greet: all_reports_${{ github.run_number }} 
