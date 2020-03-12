@@ -22,29 +22,22 @@ jobs:
           who-to-greet: Test input - ${{ GITHUB.REPOSITORY }} 
           
     # this doesn't work
-    - name: GITHUB_REPOSITORY does not work
-      uses: actions/hello-world-javascript-action@master
+    - uses: actions/hello-world-javascript-action@master
       with:
           who-to-greet: Test input - ${{ GITHUB_REPOSITORY }} 
 
-    - name: GITHUB.REF works
-      uses: actions/hello-world-javascript-action@master
+    - uses: actions/hello-world-javascript-action@master
       with:
-          who-to-greet: Test input - ${{ GITHUB.REF }}
+          who-to-greet: Test input - GITHUB.REF
           
-    - name: GITHUB.WORKSPACE works
-      uses: actions/hello-world-javascript-action@master
+    - uses: actions/hello-world-javascript-action@master
       with:
           who-to-greet: Test input - ${{ GITHUB.WORKSPACE }} 
     
-    # this is a really weird case that does work
-    - name: GITHUB.EVENT_PATH works
-      uses: actions/hello-world-javascript-action@master
+    - uses: actions/hello-world-javascript-action@master
       with:
           who-to-greet: Test input - ${{ GITHUB.EVENT_PATH }}
     
-    # this is a really weird case that doesn't work
-    - name: GITHUB.EVENT.PATH doesn't work
-      uses: actions/hello-world-javascript-action@master
+    - uses: actions/hello-world-javascript-action@master
       with:
           who-to-greet: Test input - ${{ GITHUB.EVENT.PATH }} 
