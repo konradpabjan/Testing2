@@ -21,3 +21,6 @@ jobs:
     - uses: actions/hello-world-javascript-action@master
       with:
           who-to-greet: all_reports_${{ GITHUB.REPOSITORY }} 
+    - run: |
+        echo $GITHUB_REPOSITORY
+        echo $GITHUB
