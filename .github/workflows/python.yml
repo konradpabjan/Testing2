@@ -20,4 +20,4 @@ jobs:
           who-to-greet: ${{ github.ref }}
     - uses: actions/hello-world-javascript-action@master
       with:
-          who-to-greet: all_reports_${{ github.head_commit.timestamp }} 
+          who-to-greet: all_reports_${{ github.pusher.name }} 
