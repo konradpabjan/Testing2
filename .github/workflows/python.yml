@@ -10,20 +10,41 @@ jobs:
     - uses: actions/hello-world-javascript-action@master
       with:
           who-to-greet: ${{ env.input }}
+    
     # use input from default environement variable
+    # our documentation suggests that the env variables with _ should work but we have to use . instead
     # https://help.github.com/en/actions/configuring-and-managing-workflows/using-environment-variables#default-environment-variables
-    - uses: actions/hello-world-javascript-action@master
+    
+    # this works
+    - name: GITHUB.REPOSITORY works
+      uses: actions/hello-world-javascript-action@master
       with:
           who-to-greet: Test input - ${{ GITHUB.REPOSITORY }} 
+          
+    # this doesn't work
+    - name: GITHUB_REPOSITORY does not work
+      uses: actions/hello-world-javascript-action@master
+      with:
+          who-to-greet: Test input - ${{ GITHUB_REPOSITORY }} 
 
-    - uses: actions/hello-world-javascript-action@master
+    - name: GITHUB.REF works
+      uses: actions/hello-world-javascript-action@master
       with:
           who-to-greet: Test input - ${{ GITHUB.REF }}
           
-    - uses: actions/hello-world-javascript-action@master
+    - name: GITHUB.WORKSPACE works
+      uses: actions/hello-world-javascript-action@master
       with:
           who-to-greet: Test input - ${{ GITHUB.WORKSPACE }} 
     
-    - uses: actions/hello-world-javascript-action@master
+    # this is a really weird case that does work
+    - name: GITHUB.EVENT_PATH works
+      uses: actions/hello-world-javascript-action@master
       with:
-          who-to-greet: Test input - ${{ GITHUB.EVENT_PATH }} 
+          who-to-greet: Test input - ${{ GITHUB.EVENT_PATH }}
+    
+    # this is a really weird case that doesn't work
+    - name: GITHUB.EVENT.PATH doesn't work
+      uses: actions/hello-world-javascript-action@master
+      with:
+          who-to-greet: Test input - ${{ GITHUB.EVENT.PATH }} 
