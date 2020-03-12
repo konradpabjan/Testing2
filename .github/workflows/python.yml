@@ -1,10 +1,10 @@
 name: Env Variables
 on: [push]
 jobs:
-  build:
+  example:
+    runs-on: [ubuntu-latest]
     env:
       input: environment variable
-    runs-on: [ubuntu-latest]
     steps:
     # use env variable as input
     - uses: actions/hello-world-javascript-action@master
