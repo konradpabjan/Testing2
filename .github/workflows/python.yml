@@ -14,12 +14,16 @@ jobs:
     # https://help.github.com/en/actions/configuring-and-managing-workflows/using-environment-variables#default-environment-variables
     - uses: actions/hello-world-javascript-action@master
       with:
-          who-to-greet: all_reports_${{ GITHUB.REPOSITORY }} 
+          who-to-greet: Test input - ${{ GITHUB.REPOSITORY }} 
 
     - uses: actions/hello-world-javascript-action@master
       with:
-          who-to-greet: all_reports_${{ GITHUB.REF }}
+          who-to-greet: Test input - ${{ GITHUB.REF }}
+          
+    - uses: actions/hello-world-javascript-action@master
+      with:
+          who-to-greet: Test input - ${{ GITHUB.WORKSPACE }} 
     
     - uses: actions/hello-world-javascript-action@master
       with:
-          who-to-greet: all_reports_${{ GITHUB.WORKSPACE }} 
+          who-to-greet: Test input - ${{ GITHUB.EVENT_PATH }} 
