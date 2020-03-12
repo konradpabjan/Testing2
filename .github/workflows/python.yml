@@ -17,11 +17,11 @@ jobs:
     
     - uses: actions/hello-world-javascript-action@master
       with:
-          who-to-greet: ${{ GITHUB.REPOSITORY }} # GITHUB_REPOSITORY does not work but according to our docs it should
+          who-to-greet: ${{ github.repository }} # GITHUB_REPOSITORY does not work but according to our docs it should
 
     - uses: actions/hello-world-javascript-action@master
       with:
-          who-to-greet: ${{ GITHUB.REF }} # same thing for GITHUB_REF
+          who-to-greet: ${{ github.ref }} # same thing for GITHUB_REF
           
     - uses: actions/hello-world-javascript-action@master
       with:
