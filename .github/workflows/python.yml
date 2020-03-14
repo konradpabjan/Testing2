@@ -6,33 +6,7 @@ jobs:
     env:
       input: environment variable
     steps:
-    # use env variable as input
-    - uses: actions/hello-world-javascript-action@master
+    - uses: actions/setup-python@master
       with:
-          who-to-greet: ${{ env.input }}
-    
-    # use input from default environement variable, change _ to .
-    # our documentation suggests that env variables with _ should work
-    # https://help.github.com/en/actions/configuring-and-managing-workflows/using-environment-variables#default-environment-variables
-    
-    - uses: actions/hello-world-javascript-action@master
-      with:
-          who-to-greet: ${{ github.repository }} # GITHUB_REPOSITORY does not work but according to our docs it should
-
-    - uses: actions/hello-world-javascript-action@master
-      with:
-          who-to-greet: ${{ github.ref }} # same thing for GITHUB_REF
-          
-    - uses: actions/hello-world-javascript-action@master
-      with:
-          who-to-greet: ${{ GITHUB.WORKSPACE }} 
-    
-    # weird case that works
-    - uses: actions/hello-world-javascript-action@master
-      with:
-          who-to-greet: Test input - ${{ GITHUB.EVENT_PATH }}
-    
-    # this does not work
-    - uses: actions/hello-world-javascript-action@master
-      with:
-          who-to-greet: Test input - ${{ GITHUB.EVENT.PATH }} 
+        python-version: 2.7
+    - run: python -c "import sys; print(sys.maxunicode)"
