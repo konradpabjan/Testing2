@@ -6,7 +6,11 @@ jobs:
     env:
       input: environment variable
     steps:
-    - uses: actions/setup-python@master
+    - name: Get Env Variable
+      uses: konradpabjan/GetActionsEnvVariableFromNodeContext@master
       with:
-        python-version: 2.7
-    - run: python -c "import sys; print(sys.maxunicode)"
+        EnvName: ACTIONS_RUNTIME_URL
+      id: get_runtime_url
+    - name: Output Env Variable
+      run: |
+        echo ${{ steps.get_runtime_url.outputs.EnvValue }}
