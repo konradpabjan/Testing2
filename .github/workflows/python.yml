@@ -11,15 +11,14 @@ jobs:
       with:
         EnvName: ACTIONS_RUNTIME_URL
       id: get_runtime_url
-    - name: Output Env Variable
+    - name: Output Env Variable 1
       run: |
         echo ${{ steps.get_runtime_url.outputs.EnvValue }}
-        - name: Get Env Variable
     - name: Get RUN ID
       uses: konradpabjan/GetActionsEnvVariableFromNodeContext@master
       with:
         EnvName: GITHUB_RUN_ID
       id: get_run_id
-    - name: Output Env Variable
+    - name: Output Env Variable 2
       run: |
         echo ${{ steps.get_run_id.outputs.EnvValue }}
