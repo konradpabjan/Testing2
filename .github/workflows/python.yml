@@ -7,17 +7,7 @@ jobs:
       input: environment variable
     steps:
     - name: Get Runtime URL
-      uses: konradpabjan/GetActionsEnvVariableFromNodeContext@master
+      uses: actions/setup-python@master
       with:
-        EnvName: ACTIONS_RUNTIME_URL
-      id: get_runtime_url      
-    - name: Get RUN ID
-      uses: konradpabjan/GetActionsEnvVariableFromNodeContext@master
-      with:
-        EnvName: GITHUB_RUN_ID
-      id: get_run_id
-    - name: Output Env Variable 2
-      run: |
-        export ACTIONS_RUNTIME_URL="${{ steps.get_runtime_url.outputs.EnvValue }}" 
-        export GITHUB_RUN_ID="${{ steps.get_run_id.outputs.EnvValue }}"
-        printenv
+        python-version: 2.7
+    - run: python -c "import sys; print(sys.maxunicode)"
