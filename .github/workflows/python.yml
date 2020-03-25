@@ -1,13 +1,15 @@
 name: Python Test
 on: [push]
 jobs:
-  example:
-    runs-on: [ubuntu-latest]
-    env:
-      input: environment variable
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [ '2.7', '3.5', '3.6', '3.7', '3.8', 'pypy2', 'pypy3' ]
+    name: Python ${{ matrix.python-version }}
     steps:
-    - name: Get Runtime URL
-      uses: actions/setup-python@master
-      with:
-        python-version: 2.7
-    - run: python -c "import sys; print(sys.maxunicode)"
+      - name: Setup python
+        uses: actions/setup-python@konradpabjan/npm-updates
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: python -c "import sys; print(sys.version)"
