@@ -13,3 +13,7 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
       - run: python -c "import sys; print(sys.maxunicode)"
+      - uses: actions/checkout@v2
+      - run: tree /F
+        shell: pwsh
+        
