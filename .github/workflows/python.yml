@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: [ '2.7' ]
+        python-version: [ '2.7', '3.8' ]
     name: Python ${{ matrix.python-version }}
     steps:
       - name: Setup python
@@ -13,7 +13,4 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
       - run: python -c "import sys; print(sys.maxunicode)"
-      - uses: actions/checkout@v2
-      - run: tree /F
-        shell: pwsh
         
