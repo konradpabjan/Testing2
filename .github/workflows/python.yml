@@ -1,15 +1,15 @@
 name: Python Test
-on: [issue_comment]
+on: [push]
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     strategy:
       matrix:
         python-version: [ '2.7', '3.8' ]
     name: Python ${{ matrix.python-version }}
     steps:
       - name: Setup python
-        uses: actions/setup-python@master
+        uses: actions/setup-python@konradpabjan/README-Updates
         with:
           python-version: ${{ matrix.python-version }}
       - run: python -c "import sys; print(sys.maxunicode)"
