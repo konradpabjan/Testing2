@@ -2,14 +2,14 @@ name: Python Test
 on: [push]
 jobs:
   build:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         python-version: [ '2.7','3.5', '3.6', '3.7', '3.8' ]
     name: Python ${{ matrix.python-version }}
     steps:
       - name: Setup python
-        uses: actions/setup-python@konradpabjan/README-Updates
+        uses: actions/setup-python@v2
         with:
           python-version: ${{ matrix.python-version }}
       - run: python -c "import sys; print(sys.maxunicode)"
