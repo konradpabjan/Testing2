@@ -2,10 +2,10 @@ name: Python Test
 on: [push]
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     strategy:
       matrix:
-        python-version: [ '2.7','3.5', '3.6', '3.7', '3.8' ]
+        python-version: ['3.7', '3.8' ]
     name: Python ${{ matrix.python-version }}
     steps:
       - name: Setup python
