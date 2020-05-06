@@ -8,6 +8,8 @@ jobs:
         python-version: ['3.8']
     name: Python ${{ matrix.python-version }}
     steps:
+      - name: output env
+        run: printenv
       - name: Setup python
         uses: actions/setup-python@v2
         with:
