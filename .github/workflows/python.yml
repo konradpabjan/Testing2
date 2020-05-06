@@ -11,7 +11,7 @@ jobs:
       - name: output env
         run: printenv
       - name: Setup python
-        uses: konradpabjan/setup-python@master
+        uses: actions/setup-python@v2
         with:
           python-version: ${{ matrix.python-version }}
       - run: python -c "import sys; print(sys.maxunicode)"
