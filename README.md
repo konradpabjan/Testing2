@@ -8,5 +8,3 @@ ABC
 TEST
 
 Test
-
-TEST
