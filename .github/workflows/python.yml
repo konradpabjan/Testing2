@@ -2,7 +2,7 @@ name: Python Test
 on: [push]
 jobs:
   build:
-    runs-on: macos-latest
+    runs-on: self-hosted-mac
     strategy:
       matrix:
         python-version: ['3.6']
