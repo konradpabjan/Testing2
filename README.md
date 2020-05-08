@@ -4,5 +4,3 @@ TEST
 Test Again
 
 ABC
-
-TEST
