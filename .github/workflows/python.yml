@@ -11,7 +11,7 @@ jobs:
       run: |
        foreach($line in Get-Content .\input.txt) {
            $key_values = $line.Split("=")
-           echo "::set-env name=${{ $key_values[0] }}::${{ $key_values[1] }}"
+           echo('::set-env name='$key_values[0]'::'$key_values[1]')
        }
       shell: pwsh
 
