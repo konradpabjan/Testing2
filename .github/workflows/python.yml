@@ -1,18 +1,23 @@
-name: Python Test
+name: Random Test
 on: [push]
 jobs:
   build:
-    runs-on: self-hosted-mac
-    strategy:
-      matrix:
-        python-version: ['3.6']
-    name: Python ${{ matrix.python-version }}
+    runs-on: ubuntu-latest
     steps:
-      - name: output env
-        run: printenv
-      - name: Setup python
-        uses: actions/setup-python@v2
-        with:
-          python-version: ${{ matrix.python-version }}
-      - run: python -c "import sys; import os; print(sys.maxunicode); print(sys.version); print(os.path.dirname(sys.executable))"
+    - name: checkout
+      uses: actions/checkout@v2
+
+    - name: set env variables
+      run: |
+       foreach($line in Get-Content .\inputs.txt) {
+           $key_values = $line.Split("=")
+           echo "::set-env name=$key_values[0]::$key_values[1]"
+       }
+      shell: pwsh
+
+    - name: use env variables as input
+      uses: actions/hello-world-javascript-action@master
+      with:
+        who-to-greet: ${{ env.input }}
+
         
