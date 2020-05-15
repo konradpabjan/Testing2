@@ -1,14 +1,17 @@
-name: Python Testing
-on:
-  push:
-
+name: Python Test
+on: [push]
 jobs:
-  job1:
-    runs-on: ubuntu-latest
+  build:
+    runs-on: self-hosted
+    strategy:
+      matrix:
+        python-version: ['3.5','3.6']
+    name: Python ${{ matrix.python-version }}
     steps:
-      - name: Set up Python
+      - name: output env
+        run: printenv
+      - name: Setup python
         uses: actions/setup-python@v2
         with:
-          python-version: "pypy3"
-      - name: Import lzma
-        run: python -c "import lzma"
+          python-version: ${{ matrix.python-version }}
+      - run: python -c "import sys; import os; print(sys.version); print(os.path.dirname(sys.executable))"
