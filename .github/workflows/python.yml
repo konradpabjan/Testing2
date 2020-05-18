@@ -2,7 +2,7 @@ name: Python Test
 on: [push]
 jobs:
   build:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         python-version: ['3.5','3.6','3.7']
