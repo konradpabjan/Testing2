@@ -4,19 +4,7 @@ on:
             -   master
 name: Tests
 jobs:
-  test1:
-    runs-on: ubuntu-latest
-    container: ubuntu:19.10
-    strategy:
-      matrix:
-        python: [3.7]
-    steps:
-      - uses: actions/checkout@v2
-      - name: Setup Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: ${{ matrix.python }}
-  test2:
+  test:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -24,6 +12,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Setup Python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v2.0.1
         with:
           python-version: ${{ matrix.python }}
