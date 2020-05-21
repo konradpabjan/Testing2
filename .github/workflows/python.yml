@@ -2,39 +2,16 @@ on:
     push:
         branches:
             -   master
-
+name: Tests
 jobs:
-    job_example_upload_ubuntu:
-        runs-on: ubuntu-latest
-        name: '[Ubuntu] Upload artifacts'
-        steps:
-            -   run: 'mkdir --parents results/artifacts'
-            -   run: 'env | grep GITHUB_ | sort > results/artifacts/ci-env.txt'
-            -   uses: actions/upload-artifact@v2
-                with:
-                    name: artifacts_from_ubuntu
-                    path: results/artifacts/
-
-    job_example_upload_macos:
-        runs-on: macos-latest
-        name: '[MacOS] Upload artifacts'
-        steps:
-            -   run: 'mkdir -p results/artifacts'
-            -   run: 'env | grep GITHUB_ | sort > results/artifacts/ci-env.txt'
-            -   uses: actions/upload-artifact@v2
-                with:
-                    name: artifacts_from_macos
-                    path: results/artifacts/
-
-    job_example_upload_windows:
-        runs-on: windows-latest
-        name: '[Windows] Upload artifacts'
-        steps:
-            -   run: 'mkdir results'
-            -   run: 'mkdir results\artifacts'
-            -   run: 'dir $( $GITHUB_WORKSPACE )'
-            -   run: 'env | Where-Object {$_ | Select-String "GITHUB_"} | sort > results\artifacts\ci-env.txt'
-            -   uses: actions/upload-artifact@v2
-                with:
-                    name: artifacts_from_windows
-                    path: results/artifacts/
+  tests:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python: [3.7]
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python }}
