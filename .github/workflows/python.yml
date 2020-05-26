@@ -13,5 +13,13 @@ jobs:
       - uses: actions/checkout@v2
       - name: Run script
         run: ./test.sh
+      - name: Test stuff
+        run: |
+            echo "printing something"
+            echo "::error::Must supply java version argument"
+            throw "some error"
+            echo "test again"
+            throw "::error::Must supply java version argument"
+        shell: pwsh
             
             
