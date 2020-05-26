@@ -13,3 +13,9 @@ jobs:
       - uses: actions/checkout@v2
       - name: Print envs
         run: 'Get-ChildItem Env:'
+      - name: create some temp file
+        run: |
+            $tempDir = Get-Item Env:RUNNER_TEMP
+            echo "hello there" > $tempDir/somefile.txt
+            
+            
