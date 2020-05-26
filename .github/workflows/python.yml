@@ -5,7 +5,7 @@ on:
 name: Tests
 jobs:
   test:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         python: [3.6]
@@ -17,5 +17,7 @@ jobs:
         run: |
             '$tempDir = Get-Item Env:RUNNER_TEMP'
             'echo "hello there" > $tempDir/somefile.txt'
+      - name: Run script
+        run: ./test.sh
             
             
