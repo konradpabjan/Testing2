@@ -16,7 +16,7 @@ jobs:
       - name: Test stuff
         run: |
             echo "printing something"
-            throw "::error::Must supply java version argument"
+            throw "Must supply java version argument"
         shell: pwsh
             
             
