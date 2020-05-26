@@ -15,7 +15,7 @@ jobs:
         run: 'Get-ChildItem Env:'
       - name: create some temp file
         run: |
-            $tempDir = Get-Item Env:RUNNER_TEMP
-            echo "hello there" > $tempDir/somefile.txt
+            '$tempDir = Get-Item Env:RUNNER_TEMP'
+            'echo "hello there" > $tempDir/somefile.txt'
             
             
