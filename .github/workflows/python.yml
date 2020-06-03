@@ -6,33 +6,15 @@ name: Tests
 jobs:
   test:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        python: [3.6]
     steps:
-      - name: Dump GitHub context
-        env:
-          GITHUB_CONTEXT: ${{ toJson(github) }}
-        run: echo "$GITHUB_CONTEXT"
-      - name: Dump job context
-        env:
-          JOB_CONTEXT: ${{ toJson(job) }}
-        run: echo "$JOB_CONTEXT"
-      - name: Dump steps context
-        env:
-          STEPS_CONTEXT: ${{ toJson(steps) }}
-        run: echo "$STEPS_CONTEXT"
-      - name: Dump runner context
-        env:
-          RUNNER_CONTEXT: ${{ toJson(runner) }}
-        run: echo "$RUNNER_CONTEXT"
-      - name: Dump strategy context
-        env:
-          STRATEGY_CONTEXT: ${{ toJson(strategy) }}
-        run: echo "$STRATEGY_CONTEXT"
-      - name: Dump matrix context
-        env:
-          MATRIX_CONTEXT: ${{ toJson(matrix) }}
-        run: echo "$MATRIX_CONTEXT"
-            
+    - name: Test streaming some things
+      run: |
+        for i in {1..10000}
+        do
+           echo "Hi $i"
+           sleep 0.02
+           echo "Done sleeping for $i. We are going to have a lot of text here so that even more logs will be streamed. This is going to be just for testing"
+           echo "Can I get a consistent repo for logs sometimes not being un-expandable when a page gets refreshed?"
+           echo "Pretty please?"
+        done
             
