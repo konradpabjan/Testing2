@@ -11,5 +11,5 @@ jobs:
             echo "::set-env name=my_key::my_value"
         - uses: 'actions/hello-world-javascript-action'
           with:
-            who-to-greet: 'This should work ${{ my_key }}'
+            who-to-greet: 'This should work ${{ env.my_key }}'
 
