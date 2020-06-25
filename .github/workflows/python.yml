@@ -9,7 +9,7 @@ jobs:
     steps:
         - run: |
             echo "::set-env name=my_key::my_value"
-        - uses: 'actions/hello-world-javascript-action'
+        - uses: 'actions/hello-world-javascript-action@master'
           with:
             who-to-greet: 'This should work ${{ env.my_key }}'
 
