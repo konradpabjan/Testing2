@@ -6,10 +6,13 @@ name: Test
 jobs:
   test:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+          node-version: [8.x, 10.x, 12.x, 13.x]
     steps:
-        - run: |
-            echo "::set-env name=my_key::my_value"
-        - uses: 'actions/hello-world-javascript-action@master'
+        - name: 'Create a file'
+          run: echo ${{ matrix.node-version }} > my_file.txt
+        - name: 'Accidently upload to the same artifact via multiple jobs'
+          uses: 'actions/upload-artifact@v2'
           with:
-            who-to-greet: 'This should work ${{ env.my_key }}'
-
+              path: ${{ github.workspace }}       
