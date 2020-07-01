@@ -8,11 +8,8 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-          node-version: [8.x, 10.x, 12.x, 13.x]
+          python-version: [2.7, 3.8.1, 3.8.2]
     steps:
-        - name: 'Create a file'
-          run: echo ${{ matrix.node-version }} > my_file.txt
-        - name: 'Accidently upload to the same artifact via multiple jobs'
-          uses: 'actions/upload-artifact@v2'
+        - uses: 'actions/setup-python@konradpabjan/improve-error-messages'
           with:
-              path: ${{ github.workspace }}       
+              python-version: ${{ matrix.python-version }}       
