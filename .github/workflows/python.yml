@@ -10,6 +10,6 @@ jobs:
       matrix:
           python-version: [3.5.9, 3.6.10, 3.8.2]
     steps:
-        - uses: 'actions/setup-python@konradpabjan/improved-error-output'
+        - uses: 'actions/setup-python@master'
           with:
               python-version: ${{ matrix.python-version }}       
