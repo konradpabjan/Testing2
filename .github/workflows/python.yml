@@ -10,6 +10,7 @@ jobs:
       matrix:
           python-version: [3.5.9, 3.6.10, 3.8.2, 3.8.3, 3.7.6]
     steps:
-        - uses: 'actions/setup-python@v2'
+        - uses: 'MaksimZhukov/setup-python@v-mazhuk/add-support-of-unstable-versions'
           with:
-              python-version: ${{ matrix.python-version }}       
+              python-version: 3.9.0-beta.4 
+              stable: false
