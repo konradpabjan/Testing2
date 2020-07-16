@@ -5,11 +5,11 @@ on:
 name: Test
 jobs:
   test:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     strategy:
       matrix:
           python-version: [3.5.9, 3.6.10, 3.8.2, 3.8.3, 3.7.6]
     steps:
-        - uses: 'actions/setup-python@konradpabjan/improved-error-output'
+        - uses: 'actions/setup-python@v2.0.2'
           with:
               python-version: ${{ matrix.python-version }}       
