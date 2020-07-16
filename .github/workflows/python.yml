@@ -11,3 +11,6 @@ jobs:
           with:
               python-version: 3.9.0-beta.4 
               stable: false
+              
+        - run: |
+              python -V
