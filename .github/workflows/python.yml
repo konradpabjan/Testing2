@@ -9,7 +9,7 @@ jobs:
     steps:
         - uses: 'MaksimZhukov/setup-python@v-mazhuk/add-support-of-unstable-versions'
           with:
-              python-version: 3.9.0-beta.4 
+              python-version: 3.9.0
               stable: false
               
         - run: |
