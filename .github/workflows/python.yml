@@ -9,7 +9,7 @@ jobs:
     steps:
         - uses: 'actions/setup-python@v2'
           with:
-              python-version: 3.8
+              python-version: '3.9.0-alpha - 3.9.0'
               
         - run: |
               python -V
