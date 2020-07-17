@@ -7,7 +7,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-        - uses: 'MaksimZhukov/setup-python@v-mazhuk/add-support-of-unstable-versions'
+        - uses: 'actions/setup-python@main'
           with:
               python-version: 3.9.0-a - 3.9.0
               
