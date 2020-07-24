@@ -8,4 +8,6 @@ jobs:
     runs-on: macos-latest
     steps:
       - name: check ssl version
-        run: openssl version
+        run: |
+            openssl version
+            which openssl
