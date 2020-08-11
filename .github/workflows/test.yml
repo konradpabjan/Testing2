@@ -1,6 +1,6 @@
 on:
   workflow_run:
-    workflows: ["test"]
+    workflows: ["python"]
     branches: [main]
     types: 
       - completed
