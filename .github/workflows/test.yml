@@ -1,6 +1,6 @@
 on:
   workflow_run:
-    workflows: ["Test"]
+    workflows: ["test"]
     branches: [main]
     types: 
       - completed
@@ -10,5 +10,5 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-    - runs:|
+    - run: |
         echo "hello"
