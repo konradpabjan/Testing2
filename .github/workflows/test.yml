@@ -1,11 +1,11 @@
 on:
   workflow_run:
-    workflows: ["python"]
+    workflows: ["python.yml"]
     branches: [main]
     types: 
       - completed
       - requested
-name: workflow_run test
+name: Testing
 jobs:
   test:
     runs-on: ubuntu-latest
