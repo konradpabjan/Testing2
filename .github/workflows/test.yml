@@ -2,7 +2,7 @@ name: Second workflow
 on:
   workflow_run:
     workflows: ["First workflow"]
-    branches: [main]
+    branches: [master]
     types: 
       - completed
 jobs:
