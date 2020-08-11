@@ -9,7 +9,7 @@ jobs:
     strategy:
         matrix:
             # in this example, there is a newer version already installed, 3.7.7, so the older version will be downloaded
-            python-version: [2.7, 3.6, 3.7.5, 3.8]
+            python-version: [3.8]
     steps:
     - uses: actions/checkout@v2
     - uses: actions/setup-python@v2
@@ -17,5 +17,3 @@ jobs:
         python-version: ${{ matrix.python-version }}
     - run: |
           python -V
-          python2 -V
-          python3 -V
