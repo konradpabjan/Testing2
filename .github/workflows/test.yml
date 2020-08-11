@@ -1,11 +1,10 @@
+name: Second workflow
 on:
   workflow_run:
-    workflows: ["python.yml"]
+    workflows: ["First workflow"]
     branches: [main]
     types: 
       - completed
-      - requested
-name: Testing
 jobs:
   test:
     runs-on: ubuntu-latest
