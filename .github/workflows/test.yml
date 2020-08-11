@@ -1,0 +1,14 @@
+on:
+  workflow_run:
+    workflows: ["Test"]
+    branches: [main]
+    types: 
+      - completed
+      - requested
+name: workflow_run test
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - runs:|
+        echo "hello"
