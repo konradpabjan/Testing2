@@ -1,8 +1,8 @@
+name: First workflow
 on:
     push:
         branches:
             -   master
-name: 'Test'
 jobs:
   test:
     runs-on: ubuntu-latest
