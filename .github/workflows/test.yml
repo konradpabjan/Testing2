@@ -15,7 +15,7 @@ jobs:
       env:
         GITHUB_CONTEXT: ${{ toJson(github) }}
       run: echo "$GITHUB_CONTEXT"
-    - uses: actions/upload-artifact@v2
+    - uses: actions/download-artifact@v2
       name: 'Download from another workflow'
       with:
           name: 'my-artifact'
