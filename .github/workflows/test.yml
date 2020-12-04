@@ -1,21 +1,73 @@
-name: Second workflow
-on:
-  workflow_run:
-    workflows: ["First workflow"]
-    branches: [master]
-    types: 
-      - completed
+name: multi-platform-build
+
+on: workflow_dispatch
+
 jobs:
-  test:
-    runs-on: ubuntu-latest
-    steps:
-    - run: |
-        printenv
-    - name: Dump GitHub context
-      env:
-        GITHUB_CONTEXT: ${{ toJson(github) }}
-      run: echo "$GITHUB_CONTEXT"
-    - uses: actions/download-artifact@v2
-      name: 'Download from another workflow'
-      with:
-          name: 'my-artifact'
+ ios-build:
+   runs-on: ubuntu-latest
+   steps:
+     - run: echo "..."
+ 
+ android-build:
+   runs-on: ubuntu-latest
+   steps:
+     - run: echo "..."
+ 
+ web-build:
+   runs-on: ubuntu-latest
+   steps:
+     - run: echo "..."
+ 
+ ios-test-A:
+   runs-on: ubuntu-latest
+   needs: [ios-build]
+   steps:
+     - run: echo "..."
+ 
+ ios-test-B:
+   runs-on: ubuntu-latest
+   needs: [ios-build]
+   steps:
+     - run: echo "..."
+ 
+ ios-test-C:
+   runs-on: ubuntu-latest
+   needs: [ios-build]
+   steps:
+     - run: echo "..."
+ 
+ android-test-A:
+   runs-on: ubuntu-latest
+   needs: [android-build]
+   steps:
+     - run: echo "..."
+ 
+ android-test-B:
+   runs-on: ubuntu-latest
+   needs: [android-build]
+   steps:
+     - run: echo "..."
+ 
+ android-test-C:
+   runs-on: ubuntu-latest
+   needs: [android-build]
+   steps:
+     - run: echo "..."
+ 
+ web-test-A:
+   runs-on: ubuntu-latest
+   needs: [web-build]
+   steps:
+     - run: echo "..."
+ 
+ web-test-B:
+   runs-on: ubuntu-latest
+   needs: [web-build]
+   steps:
+     - run: echo "..."
+ 
+ release:
+   runs-on: ubuntu-latest
+   needs: [ios-test-A,ios-test-B,ios-test-C,android-test-A,android-test-B,android-test-C,web-test-A,web-test-B]
+   steps:
+     - run: echo "..."
