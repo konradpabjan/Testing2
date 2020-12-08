@@ -6,68 +6,7 @@ jobs:
  ios-build:
    runs-on: ubuntu-latest
    steps:
-     - run: echo "..."
+     - run:
+         for ((i = 0 ; i < 200 ; i++)); do; echo "Hello Friend"; done
+       shell: bash
  
- android-build:
-   runs-on: ubuntu-latest
-   steps:
-     - run: echo "..."
- 
- web-build:
-   runs-on: ubuntu-latest
-   steps:
-     - run: echo "..."
- 
- ios-test-A:
-   runs-on: ubuntu-latest
-   needs: [ios-build]
-   steps:
-     - run: echo "..."
- 
- ios-test-B:
-   runs-on: ubuntu-latest
-   needs: [ios-build]
-   steps:
-     - run: echo "..."
- 
- ios-test-C:
-   runs-on: ubuntu-latest
-   needs: [ios-build]
-   steps:
-     - run: echo "..."
- 
- android-test-A:
-   runs-on: ubuntu-latest
-   needs: [android-build]
-   steps:
-     - run: echo "..."
- 
- android-test-B:
-   runs-on: ubuntu-latest
-   needs: [android-build]
-   steps:
-     - run: echo "..."
- 
- android-test-C:
-   runs-on: ubuntu-latest
-   needs: [android-build]
-   steps:
-     - run: echo "..."
- 
- web-test-A:
-   runs-on: ubuntu-latest
-   needs: [web-build]
-   steps:
-     - run: echo "..."
- 
- web-test-B:
-   runs-on: ubuntu-latest
-   needs: [web-build]
-   steps:
-     - run: echo "..."
- 
- release:
-   runs-on: ubuntu-latest
-   needs: [ios-test-A,ios-test-B,ios-test-C,android-test-A,android-test-B,android-test-C,web-test-A,web-test-B]
-   steps:
-     - run: echo "..."
