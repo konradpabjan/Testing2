@@ -7,6 +7,6 @@ jobs:
    runs-on: ubuntu-latest
    steps:
      - run:
-         for ((i = 0 ; i < 200 ; i++)); do; echo "Hello Friend"; done
+         for ((i = 0 ; i < 200 ; i++)); do echo "Hello Friend"; done
        shell: bash
  
