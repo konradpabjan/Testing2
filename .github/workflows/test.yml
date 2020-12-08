@@ -1,6 +1,6 @@
 name: multi-platform-build
 
-on: workflow_dispatch
+on: pull_request
 
 jobs:
  ios-build:
