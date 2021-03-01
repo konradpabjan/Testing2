@@ -12,7 +12,4 @@ Test
 AA
 
 BB
-
-AA
-
 AA
