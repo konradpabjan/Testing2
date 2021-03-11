@@ -1,10 +1,13 @@
 name: Rename
 
-on: [pull_request,push]
+on: [pull_request,push, workflow_dispatch]
 
 jobs:
- ios-build:
+ build:
    runs-on: ubuntu-latest
+   environment: 
+      name: my-env
+      url: "https://github.com/konradpabjan"
    steps:
      - run:
          for ((i = 0 ; i < 200 ; i++)); do echo "Hello Friend"; done
