@@ -13,9 +13,7 @@ jobs:
         echo "::warning file=README.md,line=1,col=5::Yo! You're spelling is off or something, you should go ahead and fix that"
         echo """::warning file=README.md,line=1,col=5:: Hello there
         This is some multi-line annotation
-        
         eslint --report-unused-disable-directives --max-warnings=0 . --ext .js,.ts "--format" "./node_modules/eslint-plugin-github/lib/formatters/stylish-fixes.js
-        
         Browserslist: caniuse-lite is outdated. Please run:
         nnpx browserslist@latest --update-db
         """
