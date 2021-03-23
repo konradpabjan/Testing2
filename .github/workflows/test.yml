@@ -6,7 +6,7 @@ jobs:
  build:
    runs-on: ubuntu-latest
    environment: 
-      name: my-env
+      name: testing-env
       url: "https://github.com/konradpabjan"
    steps:
      - run:
