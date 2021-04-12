@@ -5,9 +5,7 @@ on: [pull_request, workflow_dispatch]
 jobs:
  build:
    runs-on: ubuntu-latest
-   environment: 
-      name: testing-env
-      url: "https://github.com/konradpabjan"
+   timeout-minutes: 15
    steps:
      - uses: actions/checkout@v2
      - name: Setup java
@@ -15,4 +13,7 @@ jobs:
        with:
          distribution: 'adopt'
          java-version: 11
+     - name: Ping
+       run: |
+         ping -c 5000000 localhost
  
