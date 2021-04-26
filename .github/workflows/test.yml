@@ -13,7 +13,3 @@ jobs:
        with:
          distribution: 'adopt'
          java-version: 11
-     - name: Ping
-       run: |
-         ping -c 5000000 localhost
- 
