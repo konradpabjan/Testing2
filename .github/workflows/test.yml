@@ -13,3 +13,6 @@ jobs:
        with:
          distribution: 'adopt'
          java-version: 11
+     - name: Output-env
+       run: |
+        printenv
