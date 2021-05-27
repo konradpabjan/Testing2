@@ -1,4 +1,4 @@
-name: Rename
+name: test-some-realy-really-really-really-long-yaml-file-name-that-will-cause-some-overflow-testing-lets-see-this
 
 on: [pull_request, workflow_dispatch]
 
