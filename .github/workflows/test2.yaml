@@ -1,12 +1,21 @@
-name: Testing2
+name: 빌드및도커이미지저장
+
 on:
-    workflow_dispatch:
+
+  workflow_dispatch:
+
 jobs:
-  test:
+  build:
     runs-on: ubuntu-latest
+    environment: testing1
+
     steps:
-    - uses: actions/checkout@v2
-    - run: |
-        echo "::warning file=README.md,line=1,col=5::Yo! You're spelling is off or something, you should go ahead and fix that"
-        exit 1
-      shell: bash
+      - uses: actions/checkout@v2
+
+      - name: Run a one-line script
+        run: echo Hello, world!
+
+      - name: Run a multi-line script
+        run: |
+          echo Add other actions to build,
+          echo test, and deploy your project.
