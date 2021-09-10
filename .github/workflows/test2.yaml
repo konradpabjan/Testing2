@@ -1,4 +1,4 @@
-name: flókið
+name: Test
 
 on:
 
@@ -7,8 +7,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    environment: testing1
-
     steps:
       - uses: actions/checkout@v2
 
