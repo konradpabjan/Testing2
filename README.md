@@ -13,9 +13,3 @@ AA
 
 BB
 AA
-
-some commit
-
-test
-
-test
