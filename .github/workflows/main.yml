@@ -28,7 +28,7 @@ jobs:
       - name: Step with an emoji 🥳
         run: echo Hello, world!
 
-      - name: Run a multi-line script
+      - name: This is yet another step
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
