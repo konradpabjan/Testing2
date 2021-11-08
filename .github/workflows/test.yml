@@ -27,7 +27,7 @@ jobs:
       name: dogfood
     steps:
       - name: Run a one-line script
-        run: echao Hello, world!
+        run: echo Hello, world!
       - name: Run a multi-line script
         run: |
           echo Add other actions to build,
