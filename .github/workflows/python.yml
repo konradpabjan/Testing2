@@ -7,7 +7,7 @@ jobs:
       matrix:
         python-version: ['3.7']
     name: Python ${{ matrix.python-version }}
-    steps:
+    stes:
       - name: output env
         run: printenv
       - name: Setup python
