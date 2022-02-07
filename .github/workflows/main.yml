@@ -19,7 +19,6 @@ jobs:
   build:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
-    environment: testing1
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -30,4 +29,8 @@ jobs:
         run: echo Hello, world!
         
       - name: Testing the Error Workflow Command
-        run: echo "::error file=.github/workflows/main.yml,line=33,col=10,endColumn=10, title=Code Error::Testing"
+        run: echo "::error file=README.md,line=1,col=10,endColumn=10, title=Code Error::Testing"
+        
+      - name: Testing the Error Workflow Command
+        run: echo "::error file=.github/workflows/main.yml,line=35,col=10,endColumn=10, title=Code Error::Testing2"
+
