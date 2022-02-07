@@ -19,16 +19,15 @@ jobs:
   build:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
-    environment: testing1
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - uses: actions/checkout@v2
         name: "Checkout step"
       - name: Testing the Notice Workflow Command
-        run: echo "::notice file=test.js,line=1,col=1,endColumn=5,title=This is a test notice::This is a test notice from GitHub Actions"
+        run: echo "::notice file=github/workflows/mail.yml,line=1,col=1,endColumn=5,title=This is a test notice::This is a test notice from GitHub Actions"
       - name: Testing the Warning Workflow Command
-        run: echo "::warning file=test.js,line=1,title=Warning::You should spell out your PowerShell commands"
+        run: echo "::warning file=README.md,line=1,title=Warning::You should spell out your PowerShell commands"
       - name: Testing the Warning Workflow Command 2
         run: echo '::warning file=test.js,line=1,endColumn=5,col=4,endLine=3,title=Warning::You should spell out your PowerShell commands'
       - name: Testing the Error Workflow Command
