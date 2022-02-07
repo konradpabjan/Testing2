@@ -12,6 +12,15 @@ on:
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
+    inputs:
+      line:
+        description: 'line number'
+        type: choice
+        default: "10"
+        options:
+        - "10"
+        - "15"
+        - "20"
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -32,5 +41,5 @@ jobs:
         run: echo "::error file=README.md,line=1,col=10,endColumn=10, title=Code Error::Testing"
         
       - name: Testing the Error Workflow Command
-        run: echo "::error file=.github/workflows/main.yml,line=35,col=10,endColumn=10, title=Code Error::Testing2"
+        run: echo "::error file=.github/workflows/main.yml,line=${{ github.event.inputs.line }} ,col=10,endColumn=10, title=Code Error::Testing2"
 
