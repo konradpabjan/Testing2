@@ -28,8 +28,6 @@ jobs:
 
       - name: Step with an emoji 🥳
         run: echo Hello, world!
-
-      - name: This is yet another step
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+        
+      - name: Testing the Error Workflow Command
+        run: echo "::error file=README.md,line=1,col=10,endColumn=10, title=Code Error::Testing"
