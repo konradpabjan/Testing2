@@ -7,13 +7,6 @@ Test yet again!
 
 Test
 
-Test
-
-AA
-
-BB
-AA
-
 some commit
 
 test
