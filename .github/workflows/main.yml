@@ -44,5 +44,5 @@ jobs:
         run: echo "::error file=.github/workflows/main.yml,line=${{ github.event.inputs.line }} ,col=10,endColumn=10, title=Code Error::Testing2"
         
       - name: Testing the Error Workflow Command
-        run: echo "::error This is going to be some error command"
+        run: echo "::error::My error message"
 
