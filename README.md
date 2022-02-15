@@ -9,10 +9,6 @@ Test
 
 Test
 
-AA
-test
-
-test
 
 
 @konradpabjan
