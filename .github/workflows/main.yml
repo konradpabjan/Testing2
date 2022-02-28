@@ -41,7 +41,7 @@ jobs:
         run: echo "::error file=README.md,line=1,col=10,endColumn=10, title=Code Error::Testing"
         
       - name: Testing the Error Workflow Command
-        run: echo "::error file=.github/workflows/main.yml,line=${{ github.event.inputs.line }} ,col=10,endColumn=10, title=Code Error::Testing2"
+        run: echo "::warning file=.github/workflows/main.yml,line=${{ github.event.inputs.line }} ,col=10,endColumn=10, title=Code Error::Testing2"
         
       - name: Test deleting file
         run: |
