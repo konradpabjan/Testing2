@@ -31,5 +31,7 @@ jobs:
       - name: Composite action
         uses: konradpabjan/composite-action-test@main
         
+      - uses: actions/setup-node@v2
+        
         
 
