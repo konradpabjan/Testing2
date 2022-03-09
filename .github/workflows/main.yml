@@ -12,22 +12,13 @@ on:
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
-    inputs:
-      line:
-        description: 'line number'
-        type: choice
-        default: "10"
-        options:
-        - "10"
-        - "15"
-        - "20"
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
   build:
     # The type of runner that the job will run on
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -39,19 +30,6 @@ jobs:
         
       - name: Composite action
         uses: konradpabjan/composite-action-test@main
-        
-      - name: Testing the Error Workflow Command
-        run: echo "::error::Testing error"
-        
-      - name: Testing the Error Workflow Command
-        run: echo "::warning file=.github/workflows/main.yml,line=${{ github.event.inputs.line }} ,col=10,endColumn=10, title=Code Error::Testing2"
-        
-      - name: Test deleting file
-        run: |
-          touch hello.txt
-          ls
-          rm hello.txt
-          ls
         
         
 
