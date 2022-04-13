@@ -42,13 +42,3 @@ Text
 This is how you dropdown.
 </details>
 
-Text
-~~~~~~
-Hello world!
-~~~~~~
-
-```
-Test this tuna
-```
-
-Test
