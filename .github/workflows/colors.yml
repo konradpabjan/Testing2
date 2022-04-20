@@ -1,0 +1,13 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Colors
+
+on:
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Demo colors
+      run: |
+        curl -s https://gist.githubusercontent.com/HaleTom/89ffe32783f89f403bba96bd7bcd1263/raw/ | bash
