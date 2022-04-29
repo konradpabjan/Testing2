@@ -20,13 +20,7 @@ test
 
 test
 
-
-@konradpabjan
-
-~~~~~~
-Hello world!
-~~~~~~
-
+new commit
 
 Shoop da woop
 
