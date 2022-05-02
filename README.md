@@ -16,8 +16,6 @@ some commit
 
 test
 
-test
-
 new commit
 
 Shoop da woop
