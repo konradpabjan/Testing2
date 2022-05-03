@@ -18,8 +18,6 @@ test
 
 new commit
 
-Shoop da woop
-
 # Hello1
 
 ## Hello2
