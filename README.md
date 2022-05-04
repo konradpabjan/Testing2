@@ -34,7 +34,3 @@ Text
 ~~~~~~
 Hello world!
 ~~~~~~
-
-```
-Test this tuna
-```
