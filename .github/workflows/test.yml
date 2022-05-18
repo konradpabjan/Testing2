@@ -18,3 +18,6 @@ jobs:
         run: |
           echo ::error:: hi there
           echo ::warning:: this is a warning
+          
+      - name: composite action test
+        uses: konradpabjan/composite-action-test@main
