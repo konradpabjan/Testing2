@@ -14,5 +14,5 @@ jobs:
       run: |
         echo "::error::This is some error"
         echo ::error title="test title"::This is a custom title
-        echo ::error title="column stuff" startColumn=10 endColumn=15::This is a custom title
-        echo ::error title="test title"::This is a custom title
+        echo ::error title="column stuff", col=10, endColumn=15::This is a custom title
+        echo ::error title="test title", endColumn=15::This is a custom title
