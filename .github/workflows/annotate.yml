@@ -13,4 +13,4 @@ jobs:
     - name: Create Annotations
       run: |
         echo "::error::This is some error"
-        echo "::error title='test title'::This is a custom title"
+        echo ::error title="test title"::This is a custom title
