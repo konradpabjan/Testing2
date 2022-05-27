@@ -28,9 +28,7 @@ jobs:
              });
              run = runs.data.workflow_runs[0];
              run_id = run.id;
-             console.log(run.head_repository)
+             console.log(run.head_repository.owner.login)
              console.log(`number of runs is ${runs.data.workflow_runs.length}`)
-             output = JSON.stringify(runs.data.workflow_runs)
-             console.log(`Output is ${output})`)
              console.log(`run id ${run_id}`)
              
