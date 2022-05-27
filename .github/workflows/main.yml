@@ -28,7 +28,11 @@ jobs:
              });
              run = runs.data.workflow_runs[0];
              run_id = run.id;
-             console.log(run.head_repository.owner.login)
+             head_repository_owner = run.head_repository.owner.login
+             if (head_repository_owner !== context.repo.owner) {
+                console.log("::error::Artifact poisoning detected")
+                exit 1
+             }
              console.log(`number of runs is ${runs.data.workflow_runs.length}`)
              console.log(`run id ${run_id}`)
              
