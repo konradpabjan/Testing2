@@ -29,5 +29,6 @@ jobs:
              run = runs.data.workflow_runs[0];
              run_id = run.id;
              console.log(`number of runs is ${runs.data.workflow_runs.length}`)
+             console.log(`number of runs is ${runs.data.workflow_runs}`)
              console.log(`run id ${run_id}`)
              
