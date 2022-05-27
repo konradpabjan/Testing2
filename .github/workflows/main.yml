@@ -23,7 +23,7 @@ jobs:
              var runs = await github.actions.listWorkflowRuns({
                 owner: context.repo.owner,
                 repo: context.repo.repo,
-                workflow_id: 'main.yml',
+                workflow_id: 'pr.yml',
                 branch: 'test-script1'
              });
              run = runs.data.workflow_runs[0];
