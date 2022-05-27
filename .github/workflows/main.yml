@@ -22,7 +22,7 @@ jobs:
            script: |
              var runs = await github.actions.listWorkflowRuns({
                 owner: context.repo.owner,
-                repo: context.repo.repo,
+                head_repository: context.repo.repo,
                 workflow_id: 'pr.yml',
                 branch: 'test-script1'
              });
