@@ -4,13 +4,9 @@ on:
   workflow_dispatch:
 
 jobs:
+  test:
+    uses: konradpabjan/reusable-workflow-test/.github/workflows/blank.yml@main
   build:
-
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v3
-    - name: Call Reusable 1
-      uses: konradpabjan/reusable-workflow-test/.github/workflows/blank.yml@main
-    - name: Call Reusable 2
-      uses: konradpabjan/reusable-workflow-test/.github/workflows/blank.yml@main
