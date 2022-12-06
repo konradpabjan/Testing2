@@ -1,12 +1,12 @@
 name: Annotate
 
 on:
-  workflow_dispatch
+  push:
 
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    rus-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v3
