@@ -6,6 +6,7 @@ on:
 jobs:
   test:
     uses: konradpabjan/reusable-workflow-test/.github/workflows/blank.yml@main
+    secrets: inherit
   build:
     runs-on: ubuntu-latest
     steps:
