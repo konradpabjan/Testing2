@@ -7,6 +7,8 @@ jobs:
   test:
     uses: konradpabjan/reusable-workflow-test/.github/workflows/blank.yml@main
     secrets: inherit
+    strategy:
+      fail-fast: true
   build:
     runs-on: ubuntu-latest
     steps:
