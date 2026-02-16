@@ -7,7 +7,8 @@ on:
   pull_request:
 jobs:
   Build:
-    runs-on: ubuntu-latest 
+    runs-on: ubuntu-latest
+    environment: test-env
     steps:
       # Runs a single command using the runners shell
       - name: Run a one-line script
